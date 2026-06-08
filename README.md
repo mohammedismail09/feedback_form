@@ -1,24 +1,44 @@
 # Feedback Form Project
 
-A simple and robust Django web application designed to collect user feedback through a web form, store the entries securely in a database, and manage them via the built-in Django Admin interface.
+A simple and robust Django web application designed to collect user feedback through a web form, store the entries securely in a database, and manage them via the built-in Django Admin interface. This project is fully containerized using Docker for seamless development and deployment.
 
 ---
 
 ## 🚀 Features & Development Steps
 
-1. **Virtual Environment Isolation**: Keeps project dependencies clean and separate.
+1. **Virtual Environment Isolation**: Keeps project dependencies clean and separate for local usage.
 2. **Django Framework**: Built using Python's most popular high-level web framework.
 3. **Modular Architecture**: Project structural configuration separated from application logic.
 4. **Data Modeling**: Structural database design mapped natively using Django ORM.
 5. **Django Forms API**: Automated form generation, styling hooks, and server-side validation.
 6. **Persistent Storage**: Secure SQL database storage for all submitted feedback.
 7. **Admin Dashboard**: Built-in, secure control panel to read, filter, and delete user feedback.
+8. **Docker Containerization**: Entire app environment packaged into a Docker container for consistent running across any system.
 
 ---
 
-## 🛠️ Installation & Setup Instructions
+## 🐳 Docker Setup & Execution (Recommended)
 
-Follow these steps to get the development environment running locally.
+Make sure you have [Docker Desktop](https://docker.com) installed and running on your system.
+
+### 1. Build the Docker Image
+Navigate to your project root folder and build the container image:
+```bash
+docker build -t feedback-form-app .
+```
+
+### 2. Run the Container
+Launch the container and map it to your local port 8000:
+```bash
+docker run -p 8000:8000 feedback-form-app
+```
+* Open your browser and navigate to `http://127.0.0` to view the application.
+
+---
+
+## 🛠️ Local Installation & Setup Instructions (Without Docker)
+
+If you prefer to run the development environment natively on your machine, follow these steps.
 
 ### 1. Clone the Project & Navigate
 ```bash
@@ -80,5 +100,7 @@ feedback_form/                <-- Root Directory
 │   └── admin.py              <-- Admin Panel Registration
 │── venv/                     <-- Isolated Python Environment (Ignored by Git)
 │── db.sqlite3                <-- Local Database (Ignored by Git)
+│── Dockerfile                <-- Docker Configuration Instructions
+│── requirements.txt          <-- Python Package Dependencies List
 └── manage.py                 <-- Django Command Line Utility
 ```
